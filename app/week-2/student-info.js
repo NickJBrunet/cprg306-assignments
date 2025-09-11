@@ -4,7 +4,7 @@ export default function StudentInfo() {
   return (
     <main>
       <p>Nicholas Brunet</p>
-      <Link href="https://github.com/NickJBrunet/cprg306-assignments">Github Repository Link</Link>
+      <Link className="underline" href="https://github.com/NickJBrunet/cprg306-assignments">https://github.com/NickJBrunet/cprg306-assignments</Link>
     </main>
   );
 }
