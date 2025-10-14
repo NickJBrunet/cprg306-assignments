@@ -8,25 +8,37 @@ Modified: 2024-09-25
 
 import Header from "./components/header";
 import AssignmentSidebar from "./components/assignment-sidebar";
+import DemoSidebar from "./components/demos-sidebar";
 
 export default function Page() {
   return (
     <main className="flex flex-col h-dvh w-screen">
+
       {/* Header component used on all pages */}
       <Header />
+
       {/* Main body container */}
       <div className="flex flex-row h-full">
+
         {/* Left sidebar */}
-        <div className="w-1/2"></div>
+        <div className="w-1/2">
+          {/* DemoSidebar handles all link references for demos */}
+          <DemoSidebar />
+
+        </div>
+        
         {/* Middle body container */}
         <div className="w-full text-center pt-2">
           <h1 className="text-2xl">Created By: Nicholas Brunet</h1>
           <p>Software development student at SAIT</p>
+
         </div>
+
         {/* Right sidebar */}
         <div className="w-1/2 h-full">
+          {/* AssignmentSidebar handles all link references for assignments */}
           <AssignmentSidebar />
-          {/* AssignmentSidebar handles all link references */}
+
         </div>
       </div>
     </main>

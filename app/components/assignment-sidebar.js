@@ -8,7 +8,8 @@ export default function AssignmentSidebar() {
         <div className={`${colorScheme.other} p-4 flex-1`}>
             <Link className="underline" href="./week-2">Week 2 Assignment</Link> <br />
             <Link className="underline" href="./week-3">Week 3 Assignment</Link> <br />
-            <Link className="underline" href="./week-4">Week 4 Assignment</Link>
+            <Link className="underline" href="./week-4">Week 4 Assignment</Link> <br />
+            <Link className="underline" href="./week-5">Week 5 Assignment</Link>
         </div>  
     </div>
   );
