@@ -2,7 +2,7 @@
 
 Author: Nick Brunet
 Description: Week 3 assignment component for each individual grocery item.
-Modified: 2024-09-25
+Modified: 2025-09-25
 
 */
 

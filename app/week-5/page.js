@@ -7,9 +7,13 @@ Modified: 2025-10-02
 */
 
 import Header from '../components/header';
+import NewItem from './new-item';
 
 export default function Page() {
-  return (
-    <Header/>
-  );
+	return (
+		<main>
+			<Header/>
+			<NewItem/>
+		</main>
+	);
 }

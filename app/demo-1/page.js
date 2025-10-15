@@ -10,10 +10,10 @@ import Header from '../components/header';
 import DogForm from './dog-form';
 
 export default function Page() {
-  return (
-    <main>
-        <Header />
-        <DogForm />
-    </main>
-  );
+	return (
+		<main>
+			<Header />
+			<DogForm />
+		</main>
+	);
 }

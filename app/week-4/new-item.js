@@ -5,18 +5,13 @@ Description:
              Week 4 assignment new-item component to adjust quantity of new grocery item.
              Week 5 will expand on this component.
              
-Modified: 2024-09-25
+Modified: 2025-09-25
 
 */
 
 "use client";
 
 import { useState } from 'react';
-import Link from 'next/link';
-
-function incrementQuantity(currentQuantity) {
-    return currentQuantity + 1;
-}
 
 export default function NewItem() {
 

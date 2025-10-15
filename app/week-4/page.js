@@ -10,10 +10,10 @@ import Header from '../components/header';
 import NewItem from './new-item';
 
 export default function Page() {
-  return (
-    <main className="flex flex-col h-dvh w-screen text-center">
-      <Header />
-      <NewItem />
-    </main>
-  )
+return (
+	<main className="flex flex-col h-dvh w-screen text-center">
+		<Header />
+		<NewItem />
+	</main>
+)
 }
