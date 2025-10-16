@@ -100,7 +100,7 @@ export default function NewItem(){
 					{/* Category selection form */}
 					<div className="flex justify-center">
 						<label name="category" className="pr-2">Category: </label>
-						<select name="category" value={category} onChange={event => handleCategoryChange(event)} defaultValue={categories[0]}>
+						<select name="category" value={category} onChange={event => handleCategoryChange(event)}>
 
 							{categories.map((category) => (	
 								<option value={category}>{category}</option>
