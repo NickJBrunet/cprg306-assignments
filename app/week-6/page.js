@@ -7,9 +7,13 @@ Modified: 2025-10-14
 */
 
 import Header from '../components/header';
+import ItemList from './ItemList';
 
 export default function Page() {
   return (
-    <Header/>
+    <main className="w-full">
+      <Header/>
+      <ItemList/>
+    </main>
   );
 }

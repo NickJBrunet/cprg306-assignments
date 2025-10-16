@@ -70,9 +70,9 @@ export default function NewItem(){
 		event.preventDefault();
 
 		const newItem = {
-			name,
-			category,
-			quantity
+			name: name,
+			category: category,
+			quantity: quantity
 		}
 
 		alert(`New Item has been Added: \n - Name: ${newItem.name} \n - Category: ${newItem.category} \n - Quantity: ${newItem.quantity}`)
