@@ -109,7 +109,7 @@ export default function NewItem(){
 						</select>
 					</div>
 
-					{/* Quantity button section */}
+					{/* Quantity button section. */}
 					<div className="flex justify-center">
 
 						<label name="quantity" className="pr-2">Quantity: </label>
