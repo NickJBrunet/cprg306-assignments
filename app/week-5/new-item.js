@@ -103,7 +103,7 @@ export default function NewItem(){
 						<select name="category" value={category} onChange={event => handleCategoryChange(event)}>
 
 							{categories.map((category) => (	
-								<option value={category}>{category}</option>
+								<option key={category} value={category}>{category}</option>
 							))}
 
 						</select>
