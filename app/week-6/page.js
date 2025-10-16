@@ -10,10 +10,10 @@ import Header from '../components/header';
 import ItemList from './ItemList';
 
 export default function Page() {
-  return (
-    <main className="w-full">
-      <Header/>
-      <ItemList/>
-    </main>
-  );
+	return (
+		<main className="w-full">
+			<Header/>
+			<ItemList/>
+		</main>
+	);
 }

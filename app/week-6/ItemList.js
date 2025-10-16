@@ -26,9 +26,6 @@ export default function ItemList() {
 
     function sortItems(itemA, itemB){
 
-        console.log(`ItemA: ${itemA}`)
-        console.log(`ItemB: ${itemB}`)
-
         if (sortBy === "name") {
             // Uses Ternary operators to return 1, -1, or 0 based on alphabetical order of name property
             if (itemA.name > itemB.name){
