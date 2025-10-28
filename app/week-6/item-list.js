@@ -2,7 +2,7 @@
 
 Author: Nick Brunet
 Description: Week 6 item list component
-Modified: 2025-10-16
+Modified: 2025-10-22
 
 */
 "use client";
@@ -27,7 +27,6 @@ export default function ItemList() {
     function sortItems(itemA, itemB){
 
         if (sortBy === "name") {
-            // Uses Ternary operators to return 1, -1, or 0 based on alphabetical order of name property
             if (itemA.name > itemB.name){
                 return 1;
             } else if (itemA.name === itemB.name) {

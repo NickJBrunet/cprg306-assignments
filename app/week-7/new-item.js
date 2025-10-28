@@ -2,16 +2,17 @@
 
 Author: Nick Brunet
 Description: 
-             Week 5 assignment; create a new item with a name, 
-             select its quantity and category.
+			Modified for Week 7.
+			Week 5 assignment; create a new item with a name, 
+			select its quantity and category.
 
-             Use of Week 4 increment/decrement button code
+			Use of Week 4 increment/decrement button code
 
 References:
-            use of: https://react.dev/reference/react-dom
-            for how react handles its components in more depth
-             
-Modified: 2025-10-14
+			use of: https://react.dev/reference/react-dom
+			for how react handles its components in more depth
+						 
+Modified: 2025-10-22
 
 */
 
@@ -19,10 +20,10 @@ Modified: 2025-10-14
 
 import {useState} from "react";
 
-export default function NewItem(){
+export default function NewItem({onAddItem}){
 
 	// All unique categories found in week-3 item-list.js, in order.
-	const categories = ["Dairy", "Bakery", "Produce", "Meat", "Canned goods", "Dry goods", "Household"];
+	const categories = ["dairy", "bakery", "produce", "meat", "canned goods", "dry goods", "household"];
 
 	// Use states
 	const [name, setName] = useState("");
@@ -48,6 +49,20 @@ export default function NewItem(){
 		}
 	}
 
+	// Function to create random string
+	function getRandomId(){
+
+		let id = "";
+		const maxLength = 16;
+		const characters = "ABCdEFabcdef0123456789";
+
+		for (let i = 1; i < maxLength; i++){
+			id += characters.charAt(Math.floor(Math.random() * maxLength));
+		}
+
+		return id;
+	}
+
 	// State Handlers
 
 	// Handle Name Change
@@ -70,13 +85,13 @@ export default function NewItem(){
 		event.preventDefault();
 
 		const newItem = {
+			id: getRandomId(),
 			name: name,
 			category: category,
 			quantity: quantity
 		}
 
-		alert(`New Item has been Added: \n - Name: ${newItem.name} \n - Category: ${newItem.category} \n - Quantity: ${newItem.quantity}`)
-		console.log(newItem);
+		onAddItem(newItem);
 
 		// Reset to default values
 		setName("");
@@ -87,6 +102,7 @@ export default function NewItem(){
 	
 	return (
 		<div>
+			<p className="text-xl text-center">Add New Item:</p>
 			<form onSubmit={(event) => handleSubmit(event)} className="flex justify-center p-10">
 
 				<div className="flex flex-col gap-y-2">

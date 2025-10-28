@@ -6,8 +6,8 @@ Modified: 2025-10-14
 
 */
 
-import Header from '../components/header';
-import ItemList from './ItemList';
+import Header from '../components/header.js';
+import ItemList from './item-list.js';
 
 export default function Page() {
 	return (

@@ -8,9 +8,9 @@ Modified: 2025-10-14
 
 */
 
-import { colorScheme } from "../layout";
+import { colorScheme } from "./colorScheme.js";
 import Link from "next/link";
-// Required {} around import value because it's a named export.
+// Required {} around import value because it's non-default export.
 
 export default function Header() {
 return (

@@ -8,7 +8,7 @@ Modified: 2025-10-14
 
 */
 
-import { colorScheme } from "../layout";
+import { colorScheme } from "./colorScheme.js";
 import Link from "next/link";
 
 export default function AssignmentSidebar() {
