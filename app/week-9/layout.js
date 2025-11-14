@@ -1,0 +1,30 @@
+
+// Part 4: layout code starts
+
+import { AuthContextProvider } from "./_utils/auth-context";
+
+export default function Layout({ children }) {
+  return <AuthContextProvider>{children}</AuthContextProvider>;
+}
+
+// Part 4: layout code ends
+
+// Part 5: landing page starts
+// Import the useUserAuth hook
+import { useUserAuth } from "./_utils/auth-context";
+
+// Use the useUserAuth hook to get the user object and the login and logout functions
+const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
+
+// Sign in to Firebase with GitHub authentication
+await gitHubSignIn();
+
+// Sign out of Firebase
+await firebaseSignOut();
+
+// Display some of the user's information
+<p>
+  Welcome, {user.displayName} ({user.email})
+</p>;
+
+// Part 5: landing page ends
