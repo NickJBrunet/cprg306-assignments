@@ -9,6 +9,7 @@ Modified: 2025-11-13
 
 import { useState } from "react";
 import { useUserAuth } from "../_utils/auth-context";
+import Link from "next/link";
 import Header from '../../components/header.js';
 import NewItem from './new-item.js'
 import ItemList from './item-list.js'
@@ -23,6 +24,12 @@ export default function Page() {
 	const [items, setItems] = useState(itemData);
   const [ingredient, setIngredient] = useState(items[4].name);
 
+	// Handler function for logging out
+  async function logout(){
+    // Sign out of Firebase
+    await firebaseSignOut();
+  }
+
 	function handleAddItem(item){
 		setItems([...items, item])
 	}
@@ -34,8 +41,12 @@ export default function Page() {
 
 	return (
 		<main>
+			<Header/>
 			{user != null ?
 				<div>
+					<div className="w-full flex justify-center m-4">
+						<button className="bg-red-200 p-2 rounded-sm hover:bg-red-300" onClick={logout}>Logout</button> 
+					</div>
 					<div className="flex justify-center">
 						<div className="w-1/3 m-4 bg-gray-50">
 							<NewItem onAddItem={handleAddItem}/>
@@ -49,7 +60,10 @@ export default function Page() {
 					</div>
 				</div>
 			:
-				<p>You cannot access this content right now!</p>
+				<div className="w-full flex justify-center m-4">
+					<p className="mt-2">You cannot access this content right now!</p> 
+          <Link className="bg-green-200 p-2 rounded-sm hover:bg-green-300 ml-2 text-center" href="./">Login Page</Link> 
+				</div>
 			}
 			
 		</main>

@@ -2,10 +2,9 @@
 "use client";
 
 import AssignmentSidebar from "../components/assignment-sidebar";
-// Part 5: landing page starts
-// Import the useUserAuth hook
 import { useUserAuth } from "./_utils/auth-context";
-import ShoppingList from './shopping_list/page';
+import Link from "next/link";
+import ShoppingList from './shopping-list/page';
 import Header from '../components/header.js';
 
 export default function Page(){
@@ -20,33 +19,28 @@ export default function Page(){
     await gitHubSignIn();
   }
 
-  // Handler function for logging out
-  async function logout(){
-    // Sign out of Firebase
-    await firebaseSignOut();
-  }
-
   return (
     <main>
       <Header/>
-      {user == null ? 
-        <div className="flex flex-col justify-center m-4 w-fit">
-          <p className="text-xl font-bold">
-            You are not logged in!
-          </p>
-          <button className="bg-green-200 p-2 rounded-sm hover:bg-green-300" onClick={login}>Login</button> 
-        </div>
-        :
-        <div>
+      <div className="w-full flex justify-center m-4">
+				{user == null ? 
           <div className="flex flex-col justify-center m-4 w-fit">
             <p className="text-xl font-bold">
-              Welcome! {user.displayName} ({user.email})
+              You are not logged in!
             </p>
-            <button className="bg-red-200 p-2 rounded-sm hover:bg-red-300" onClick={logout}>Logout</button> 
+            <button className="bg-green-200 p-2 rounded-sm hover:bg-green-300" onClick={login}>Login</button> 
           </div>
-          <ShoppingList/>
-        </div>
-      }
+          :
+          <div>
+            <div className="flex flex-col justify-center m-4 w-fit">
+              <p className="text-xl font-bold">
+                Welcome! {user.displayName} ({user.email})
+              </p>
+              <Link className="bg-green-200 p-2 rounded-sm hover:bg-green-300 mt-4 text-center" href="./week-9/shopping-list">Shopping List</Link> 
+            </div>
+          </div>
+        }
+			</div>
     </main>
   )
 }
